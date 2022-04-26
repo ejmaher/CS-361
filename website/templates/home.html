@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}State Capital Viewer{% endblock title %}
+
+{% block content %}
+<h1 style="text-align:center">Please Select a State Capital</h1>
+<div style="text-align:center">
+    <i>Click on a link to view information about that capital.</i>
+    <div style="color:red">
+        <i>Warning: Clicking a link will redirect you to a new page.</i>
+    </div>
+</div>
+
+
+<table style="margin-left:auto; margin-right:auto; border-collapse:separate; border-spacing:0 15px">
+    <thead></thead>
+    <body>
+        <tr>
+            {% for information in info %}
+                <td style="width=150px; text-align:center; padding:5px">
+                    <b>{{ information.state }}</b>
+                    <div>
+                        <button><a href="/{{ information.capital }}">{{ information.capital }}</a></button>
+                    </div>
+                </td>
+                {% if (loop.index % 5) == 0 %}
+                    </tr>
+                    <tr>
+                {% endif %}
+            {% endfor %}
+    </body>
+</table>
+
+{% endblock %}

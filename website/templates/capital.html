@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}{{ capital }}{% endblock title %}
+
+{% block content %}
+<h1 style="text-align:center">{{ capital }}</h1>
+<div style="text-align:center">
+    <i>Please enjoy the information below about {{ capital }}!</i>
+</div>
+
+<h1 style="text-align:left; font-size:35px">About</h1>
+
+<!--&lt;!&ndash;    <a href="#" class="btn btn-primary">Wikipedia</a>&ndash;&gt;-->
+
+<div class="card-deck">
+        <div class="card">
+            <div class="card-block">
+                <p class="card-text">
+                    <b>Founded</b>: 1776
+                    <br>
+                    <b>Population</b>: 2 million
+                </p>
+            </div>
+        </div>
+
+                <div class="card border-0">
+            <div class="card-block">
+                <p class="card-text">
+                    <iframe
+                        width="340"
+                          height="250"
+                          frameborder="0" style="border:0"
+                          referrerpolicy="no-referrer-when-downgrade"
+                          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDQx5VUDCmat4HmQNJHEC2yCHK2HCJMsiE&q={{ capital }}+{{ state }}"
+                          allowfullscreen>
+                    </iframe>
+                </p>
+            </div>
+        </div>
+
+                <div class="card border-0">
+            <div class="card-block">
+                <p class="card-text">
+                    <a class="weatherwidget-io" href="{{ weather }}" data-label_1="{{ capital }}" data-theme="original" >{{ capital }}</a>
+                    <script>
+                    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                    </script>
+                </p>
+            </div>
+        </div>
+</div>
+
+<h1 style="text-align:left; font-size:35px">History</h1>
+<div class="card-deck">
+        <div class="card">
+            <div class="card-block">
+                <p class="card-text">
+                    <b>Wiki Info Here</b>
+                    <br>
+                    <i>Possibly via teammate service</i>
+                </p>
+            </div>
+        </div>
+
+        <div class="card border-0">
+            <div class="card-block">
+                <p class="card-text">
+                    <img src="/static/pictures/{{ pic }}" width="auto" height="300">
+                </p>
+            </div>
+        </div>
+</div>
+
+<h1 style="text-align:left; font-size:35px">Resources</h1>
+<div class="card border-0">
+            <div class="card-block">
+                <p class="card-text">
+                    <p style="color:red">
+                    <i>Warning: Clicking a link will redirect you to a new page.</i>
+                    </p>
+                    <a href="{{ gov_site }}">{{ capital }}, {{ state }} Official Website</a>
+                </p>
+            </div>
+
+{% endblock %}
